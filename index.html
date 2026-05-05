@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grow Biz – Digital Marketing Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --purple: #7c3aed;
+    --purple-light: #a855f7;
+    --purple-dark: #5b21b6;
+    --purple-bg: #f5f3ff;
+    --purple-grad: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+    --text-dark: #1a1a2e;
+    --text-mid: #4b5563;
+    --text-light: #6b7280;
+    --white: #ffffff;
+    --gray-bg: #f9fafb;
+    --border: #e5e7eb;
+    --radius: 12px;
+    --radius-lg: 20px;
+    --shadow: 0 4px 20px rgba(124, 58, 237, 0.08);
+    --shadow-hover: 0 8px 32px rgba(124, 58, 237, 0.18);
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+  .nav-logo {
+    font-size: 1.3rem; font-weight: 800;
+    color: var(--purple-dark);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .nav-logo span { color: var(--purple-light); }
+  nav ul { list-style: none; display: flex; gap: 28px; }
+  nav ul a { text-decoration: none; color: var(--text-mid); font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+  nav ul a:hover { color: var(--purple); }
+  .btn-nav {
+    background: var(--purple-grad); color: #fff;
+    border: none; border-radius: 8px;
+    padding: 10px 22px; font-size: 0.875rem; font-weight: 600;
+    cursor: pointer; transition: opacity 0.2s;
+  }
+  .btn-nav:hover { opacity: 0.88; }
+
+  /* SECTION BASE */
+  section { padding: 80px 5%; }
+  .section-tag {
+    display: inline-block;
+    background: var(--purple-bg);
+    color: var(--purple);
+    font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 6px 16px; border-radius: 50px;
+    margin-bottom: 16px;
+  }
+  h2.section-title {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 800; line-height: 1.2;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+  }
+  h2.section-title span { color: var(--purple); }
+  .section-sub {
+    font-size: 1rem; color: var(--text-light);
+    max-width: 580px; line-height: 1.7;
+    margin-bottom: 48px;
+  }
+  .centered { text-align: center; }
+  .centered .section-sub { margin: 0 auto 48px; }
+
+  /* BTN */
+  .btn-primary {
+    display: inline-block;
+    background: var(--purple-grad);
+    color: #fff; border: none; border-radius: 8px;
+    padding: 14px 32px; font-size: 0.95rem; font-weight: 700;
+    cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,58,237,0.3); }
+  .btn-outline {
+    display: inline-block;
+    background: transparent;
+    color: var(--purple); border: 2px solid var(--purple); border-radius: 8px;
+    padding: 12px 28px; font-size: 0.95rem; font-weight: 700;
+    cursor: pointer; transition: all 0.2s; text-decoration: none;
+  }
+  .btn-outline:hover { background: var(--purple); color: #fff; }
+
+  /* ========================
+     SECTION 1 – WHAT WE DO
+  ======================== */
+  #what-we-do { background: var(--white); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-top: 8px;
+  }
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px 28px;
+    transition: all 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: var(--purple-grad);
+    border-radius: 4px 0 0 4px;
+    transform: scaleY(0); transform-origin: top;
+    transition: transform 0.3s;
+  }
+  .service-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); border-color: #c4b5fd; }
+  .service-card:hover::before { transform: scaleY(1); }
+  .service-icon {
+    width: 56px; height: 56px; border-radius: 14px;
+    background: var(--purple-bg);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px; font-size: 1.6rem;
+  }
+  .service-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; color: var(--text-dark); }
+  .service-card p { font-size: 0.875rem; color: var(--text-light); line-height: 1.7; }
+  .service-card .learn-more {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--purple); font-size: 0.8rem; font-weight: 700;
+    margin-top: 18px; text-decoration: none;
+  }
+  .service-card .learn-more:hover { gap: 10px; }
+  .stats-row {
+    display: flex; gap: 40px; flex-wrap: wrap;
+    margin-bottom: 56px; padding: 32px;
+    background: var(--purple-bg); border-radius: var(--radius-lg);
+  }
+  .stat-item { text-align: center; flex: 1; min-width: 120px; }
+  .stat-num { font-size: 2.2rem; font-weight: 800; color: var(--purple); }
+  .stat-label { font-size: 0.8rem; color: var(--text-light); margin-top: 4px; }
+
+  /* ========================
+     SECTION 2 – PROBLEMS
+  ======================== */
+  #problems { background: var(--gray-bg); }
+  .problems-wrapper {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 48px; align-items: center;
+  }
+  .problems-visual {
+    background: var(--purple-grad);
+    border-radius: var(--radius-lg);
+    padding: 40px 36px;
+    color: #fff;
+  }
+  .problems-visual h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 24px; }
+  .problem-item {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 12px; padding: 18px 20px;
+    margin-bottom: 16px;
+  }
+  .problem-item:last-child { margin-bottom: 0; }
+  .problem-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .problem-item h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
+  .problem-item p { font-size: 0.8rem; opacity: 0.85; line-height: 1.5; }
+  .problems-content h2 { margin-bottom: 20px; }
+  .problem-card {
+    background: #fff; border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: 20px; margin-bottom: 14px;
+    display: flex; align-items: center; gap: 16px;
+    transition: box-shadow 0.2s;
+  }
+  .problem-card:hover { box-shadow: var(--shadow); }
+  .problem-badge {
+    background: #fee2e2; color: #dc2626;
+    font-size: 0.7rem; font-weight: 700;
+    padding: 3px 10px; border-radius: 50px;
+    flex-shrink: 0;
+  }
+  .problem-card p { font-size: 0.875rem; color: var(--text-mid); line-height: 1.5; }
+
+  /* ========================
+     SECTION 3 – WHATSAPP REVIEWS
+  ======================== */
+  #reviews { background: var(--white); }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+  .chat-bubble-wrap {
+    background: #e5ddd5;
+    border-radius: var(--radius-lg);
+    padding: 16px;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s;
+    overflow: hidden;
+  }
+  .chat-bubble-wrap:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+  .chat-header {
+    display: flex; align-items: center; gap: 10px;
+    background: #075e54; color: #fff;
+    padding: 10px 14px; border-radius: 10px 10px 0 0;
+    margin: -16px -16px 14px;
+  }
+  .chat-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: #25d366; display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem; font-weight: 700; color: #fff; flex-shrink: 0;
+  }
+  .chat-name { font-size: 0.875rem; font-weight: 700; }
+  .chat-role { font-size: 0.7rem; opacity: 0.8; }
+  .wa-tick { margin-left: auto; font-size: 1.1rem; }
+  .chat-msg {
+    background: #fff; border-radius: 0 10px 10px 10px;
+    padding: 12px 14px; font-size: 0.85rem; line-height: 1.6;
+    color: #111; margin-bottom: 8px;
+    position: relative;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+  .chat-msg::before {
+    content: ''; position: absolute; top: 0; left: -8px;
+    border: 8px solid transparent;
+    border-right-color: #fff;
+    border-top: 0;
+  }
+  .chat-timestamp { font-size: 0.68rem; color: #888; text-align: right; margin-top: 4px; }
+  .chat-stars { color: #ffd700; font-size: 0.95rem; margin-top: 10px; display: block; }
+  .chat-result-badge {
+    display: inline-block;
+    background: #dcfce7; color: #16a34a;
+    font-size: 0.7rem; font-weight: 700;
+    padding: 3px 10px; border-radius: 50px; margin-top: 10px;
+  }
+
+  /* ========================
+     SECTION 4 – SOLUTION
+  ======================== */
+  #solution { background: var(--gray-bg); }
+  .solution-steps {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0; position: relative;
+    margin-bottom: 56px;
+  }
+  .solution-step {
+    text-align: center; padding: 32px 24px;
+    position: relative;
+  }
+  .solution-step:not(:last-child)::after {
+    content: '→'; position: absolute; right: -14px; top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.8rem; color: #c4b5fd; z-index: 2;
+  }
+  .step-num {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--purple-grad); color: #fff;
+    font-size: 1.1rem; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 16px;
+    box-shadow: 0 6px 20px rgba(124,58,237,0.3);
+  }
+  .solution-step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+  .solution-step p { font-size: 0.8rem; color: var(--text-light); line-height: 1.6; }
+  .solution-cards {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .sol-card {
+    background: #fff; border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    padding: 32px; transition: all 0.3s;
+    display: flex; flex-direction: column;
+  }
+  .sol-card:hover { border-color: #a78bfa; box-shadow: var(--shadow-hover); }
+  .sol-card-top {
+    display: flex; align-items: center; gap: 16px; margin-bottom: 16px;
+  }
+  .sol-icon {
+    width: 52px; height: 52px; border-radius: 14px;
+    background: var(--purple-bg); display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; flex-shrink: 0;
+  }
+  .sol-card h3 { font-size: 1rem; font-weight: 700; }
+  .sol-card p { font-size: 0.85rem; color: var(--text-light); line-height: 1.7; flex: 1; }
+  .sol-features { list-style: none; margin-top: 18px; }
+  .sol-features li {
+    font-size: 0.8rem; color: var(--text-mid);
+    padding: 6px 0; border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .sol-features li:last-child { border-bottom: none; }
+  .sol-features li::before { content: '✓'; color: var(--purple); font-weight: 700; }
+  .solution-cta {
+    text-align: center; margin-top: 56px;
+    padding: 48px; background: var(--purple-grad);
+    border-radius: var(--radius-lg);
+    color: #fff;
+  }
+  .solution-cta h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 12px; }
+  .solution-cta p { opacity: 0.88; margin-bottom: 28px; font-size: 1rem; }
+  .btn-white {
+    background: #fff; color: var(--purple);
+    border: none; border-radius: 8px;
+    padding: 14px 36px; font-size: 1rem; font-weight: 800;
+    cursor: pointer; transition: transform 0.2s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-white:hover { transform: translateY(-2px); }
+
+  /* ========================
+     SECTION 5 – CONTACT
+  ======================== */
+  #contact { background: var(--white); }
+  .contact-wrapper {
+    display: grid; grid-template-columns: 1fr 1.4fr;
+    gap: 60px; align-items: start;
+  }
+  .contact-info h2 { margin-bottom: 16px; }
+  .contact-info p { font-size: 0.95rem; color: var(--text-light); line-height: 1.7; margin-bottom: 32px; }
+  .contact-detail {
+    display: flex; align-items: flex-start; gap: 14px;
+    margin-bottom: 20px;
+  }
+  .contact-detail-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: var(--purple-bg);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; flex-shrink: 0;
+  }
+  .contact-detail h4 { font-size: 0.8rem; color: var(--text-light); margin-bottom: 2px; }
+  .contact-detail p { font-size: 0.9rem; font-weight: 600; color: var(--text-dark); margin: 0; }
+  .contact-form-box {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 40px;
+    box-shadow: var(--shadow);
+  }
+  .contact-form-box h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 6px; }
+  .contact-form-box .form-sub { font-size: 0.85rem; color: var(--text-light); margin-bottom: 28px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { margin-bottom: 18px; }
+  .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-mid); margin-bottom: 6px; }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    border: 1.5px solid var(--border);
+    border-radius: 8px; padding: 12px 14px;
+    font-size: 0.875rem; font-family: 'Poppins', sans-serif;
+    color: var(--text-dark); background: var(--gray-bg);
+    transition: border-color 0.2s, background 0.2s;
+    outline: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--purple); background: #fff;
+    box-shadow: 0 0 0 3px rgba(124,58,237,0.1);
+  }
+  .form-group textarea { resize: vertical; min-height: 120px; }
+  .form-submit {
+    width: 100%;
+    background: var(--purple-grad); color: #fff;
+    border: none; border-radius: 8px;
+    padding: 15px; font-size: 1rem; font-weight: 700;
+    cursor: pointer; transition: opacity 0.2s, transform 0.2s;
+    font-family: 'Poppins', sans-serif;
+  }
+  .form-submit:hover { opacity: 0.9; transform: translateY(-1px); }
+  .free-badge {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    font-size: 0.78rem; color: var(--text-light); margin-top: 12px;
+  }
+  .free-badge span { color: var(--purple); font-weight: 700; }
+
+  /* FOOTER */
+  footer {
+    background: #0f0f1a; color: #ccc;
+    padding: 40px 5%; text-align: center;
+    font-size: 0.85rem;
+  }
+  footer .foot-logo { font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+  footer .foot-logo span { color: #a855f7; }
+  footer p { opacity: 0.6; margin-top: 8px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav ul { display: none; }
+    .problems-wrapper,
+    .contact-wrapper { grid-template-columns: 1fr; }
+    .solution-step:not(:last-child)::after { display: none; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">🚀 Grow<span>Biz</span></div>
+  <ul>
+    <li><a href="#what-we-do">Services</a></li>
+    <li><a href="#problems">Problems</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#solution">Solutions</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="btn-nav">Book a Call</button>
+</nav>
+
+
+<!-- ===========================
+     SECTION 1: WHAT WE DO
+=========================== -->
+<section id="what-we-do">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="stats-row">
+      <div class="stat-item"><div class="stat-num">4,707+</div><div class="stat-label">Leads Generated</div></div>
+      <div class="stat-item"><div class="stat-num">2.3x</div><div class="stat-label">Avg. ROI for Clients</div></div>
+      <div class="stat-item"><div class="stat-num">46%</div><div class="stat-label">Avg. Conversion Lift</div></div>
+      <div class="stat-item"><div class="stat-num">23+</div><div class="stat-label">Industries Served</div></div>
+      <div class="stat-item"><div class="stat-num">47+</div><div class="stat-label">Expert Team Members</div></div>
+      <div class="stat-item"><div class="stat-num">7+</div><div class="stat-label">Years of Experience</div></div>
+    </div>
+
+    <div class="section-tag">What We Do</div>
+    <h2 class="section-title">Performance-Driven Digital Marketing<br><span>Built to Scale Your Business</span></h2>
+    <p class="section-sub">We don't just run campaigns — we build performance systems that generate qualified leads, reduce your cost-per-acquisition, and create compounding growth month after month.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">📣</div>
+        <h3>Lead Generation</h3>
+        <p>Targeted funnels and campaigns that bring high-intent leads directly to your sales pipeline — not just traffic.</p>
+        <a href="#contact" class="learn-more">Learn More →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📱</div>
+        <h3>Social Media Management</h3>
+        <p>Consistent content, engagement, and paid campaigns across Instagram, Facebook, LinkedIn — tailored to your brand voice.</p>
+        <a href="#contact" class="learn-more">Learn More →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎯</div>
+        <h3>Google Ads & PPC</h3>
+        <p>Data-driven paid search and display campaigns that maximize your ad spend and drive measurable results fast.</p>
+        <a href="#contact" class="learn-more">Learn More →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <h3>Website Development</h3>
+        <p>High-converting, mobile-optimized websites and landing pages designed to turn visitors into customers.</p>
+        <a href="#contact" class="learn-more">Learn More →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <h3>AI & Marketing Automation</h3>
+        <p>CRM setup, automated follow-ups, and AI-powered workflows that nurture leads while you sleep.</p>
+        <a href="#contact" class="learn-more">Learn More →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔍</div>
+        <h3>SEO Services</h3>
+        <p>Long-term organic growth through technical SEO, content strategy, and link building that compounds over time.</p>
+        <a href="#contact" class="learn-more">Learn More →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎨</div>
+        <h3>Branding & Creative</h3>
+        <p>Logo, brand identity, ad creatives, and visual design that makes your business stand out and be remembered.</p>
+        <a href="#contact" class="learn-more">Learn More →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛒</div>
+        <h3>E-Commerce Solutions</h3>
+        <p>End-to-end e-commerce marketing — from product listing optimization to cart abandonment recovery campaigns.</p>
+        <a href="#contact" class="learn-more">Learn More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===========================
+     SECTION 2: PROBLEMS
+=========================== -->
+<section id="problems">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-tag">Common Problems</div>
+    <h2 class="section-title" style="max-width:560px">Are These Challenges <span>Holding Your Business Back?</span></h2>
+
+    <div class="problems-wrapper">
+      <div class="problems-content">
+        <div class="problem-card">
+          <div class="problem-badge">Pain Point</div>
+          <p>You're spending money on ads but getting zero qualified leads — just clicks that never convert into actual customers.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-badge">Pain Point</div>
+          <p>Your website gets traffic but visitors leave without taking any action. You don't know why or how to fix it.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-badge">Pain Point</div>
+          <p>Competitors are outranking you on Google and your social media posts are getting no engagement or reach.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-badge">Pain Point</div>
+          <p>You've tried multiple agencies before — they promised results but delivered generic reports and excuses instead.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-badge">Pain Point</div>
+          <p>You don't have a clear system for following up with leads. Potential clients fall through the cracks every week.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-badge">Pain Point</div>
+          <p>Your brand looks inconsistent across platforms — making it hard to build trust or stand out in a crowded market.</p>
+        </div>
+        <div style="margin-top:28px;">
+          <a href="#solution" class="btn-primary">See How We Solve This →</a>
+        </div>
+      </div>
+
+      <div class="problems-visual">
+        <h3>😩 Does This Sound Familiar?</h3>
+        <div class="problem-item">
+          <div class="problem-icon">📉</div>
+          <div>
+            <h4>Wasted Ad Budget</h4>
+            <p>Thousands spent on Google/Meta ads with little to no trackable ROI or clear attribution.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">🤷</div>
+          <div>
+            <h4>No Marketing Strategy</h4>
+            <p>Running random campaigns without a documented funnel or data-driven growth plan in place.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">🕐</div>
+          <div>
+            <h4>No Time to Focus on Marketing</h4>
+            <p>You're too busy running the business to consistently execute on content, ads, and follow-ups.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">📵</div>
+          <div>
+            <h4>Weak Online Presence</h4>
+            <p>Outdated website, low social following, and poor search rankings mean customers can't find you.</p>
+          </div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">💔</div>
+          <div>
+            <h4>Burned by Past Agencies</h4>
+            <p>Previous marketing partners overpromised, underdelivered, and left you skeptical of getting real results.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===========================
+     SECTION 3: WHATSAPP REVIEWS
+=========================== -->
+<section id="reviews">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="centered">
+      <div class="section-tag">Real Client Reviews</div>
+      <h2 class="section-title">What Our Clients Say on <span>WhatsApp</span></h2>
+      <p class="section-sub">Don't take our word for it — here's what business owners are saying about their real results with Grow Biz.</p>
+    </div>
+
+    <div class="reviews-grid">
+
+      <div class="chat-bubble-wrap">
+        <div class="chat-header">
+          <div class="chat-avatar">RK</div>
+          <div>
+            <div class="chat-name">Rajesh Kumar</div>
+            <div class="chat-role">Real Estate Business, Delhi</div>
+          </div>
+          <div class="wa-tick">✔✔</div>
+        </div>
+        <div class="chat-msg">
+          Bhai honestly bolun toh mujhe bilkul umeed nahi thi pehle ek mahine mein itne leads milenge. Grow Biz ne jo Google Ads campaign set kiya, usne 500+ real estate leads generate kiye! 🏠🔥
+        </div>
+        <div class="chat-timestamp">Yesterday, 11:42 AM</div>
+        <span class="chat-stars">★★★★★</span>
+        <span class="chat-result-badge">✓ 500+ Leads in 30 Days</span>
+      </div>
+
+      <div class="chat-bubble-wrap">
+        <div class="chat-header">
+          <div class="chat-avatar">PS</div>
+          <div>
+            <div class="chat-name">Priya Sharma</div>
+            <div class="chat-role">Beauty Salon Owner, Mumbai</div>
+          </div>
+          <div class="wa-tick">✔✔</div>
+        </div>
+        <div class="chat-msg">
+          Mera salon sirf local tha, koi online presence nahi thi. Grow Biz ne Instagram aur Google par itna kaam kiya ki ab roz naye customers aa rahe hain. Revenue 3x ho gaya! 💅✨
+        </div>
+        <div class="chat-timestamp">2 days ago, 3:15 PM</div>
+        <span class="chat-stars">★★★★★</span>
+        <span class="chat-result-badge">✓ 3x Revenue Growth</span>
+      </div>
+
+      <div class="chat-bubble-wrap">
+        <div class="chat-header">
+          <div class="chat-avatar">AM</div>
+          <div>
+            <div class="chat-name">Arjun Mehta</div>
+            <div class="chat-role">E-Commerce Store, Bangalore</div>
+          </div>
+          <div class="wa-tick">✔✔</div>
+        </div>
+        <div class="chat-msg">
+          Website ka conversion rate 1.2% tha. Grow Biz ne landing page redesign + retargeting ads lagaye — ab 4.8% pe hai! Sales mein 280% ka jump aa gaya. Bohot khush hoon! 🛍️
+        </div>
+        <div class="chat-timestamp">3 days ago, 9:22 AM</div>
+        <span class="chat-stars">★★★★★</span>
+        <span class="chat-result-badge">✓ 280% Sales Growth</span>
+      </div>
+
+      <div class="chat-bubble-wrap">
+        <div class="chat-header">
+          <div class="chat-avatar">NV</div>
+          <div>
+            <div class="chat-name">Neha Verma</div>
+            <div class="chat-role">Coaching Institute, Hyderabad</div>
+          </div>
+          <div class="wa-tick">✔✔</div>
+        </div>
+        <div class="chat-msg">
+          Humara coaching institute sirf word-of-mouth pe chalta tha. Grow Biz ke SEO aur content strategy se ab Google par top 3 mein hai. Admissions 60% badh gaye pichle quarter mein! 🎓
+        </div>
+        <div class="chat-timestamp">1 week ago, 6:48 PM</div>
+        <span class="chat-stars">★★★★★</span>
+        <span class="chat-result-badge">✓ 60% More Admissions</span>
+      </div>
+
+      <div class="chat-bubble-wrap">
+        <div class="chat-header">
+          <div class="chat-avatar">SK</div>
+          <div>
+            <div class="chat-name">Saurabh Kapoor</div>
+            <div class="chat-role">SaaS Startup, Pune</div>
+          </div>
+          <div class="wa-tick">✔✔</div>
+        </div>
+        <div class="chat-msg">
+          We tried 2 agencies before Grow Biz. Complete waste of money. These guys actually showed us real analytics, set up proper funnels, and delivered 120 qualified B2B leads in 45 days. Impressed! 🚀
+        </div>
+        <div class="chat-timestamp">1 week ago, 12:11 PM</div>
+        <span class="chat-stars">★★★★★</span>
+        <span class="chat-result-badge">✓ 120 B2B Leads in 45 Days</span>
+      </div>
+
+      <div class="chat-bubble-wrap">
+        <div class="chat-header">
+          <div class="chat-avatar">DR</div>
+          <div>
+            <div class="chat-name">Dr. Divya Rao</div>
+            <div class="chat-role">Dental Clinic, Chennai</div>
+          </div>
+          <div class="wa-tick">✔✔</div>
+        </div>
+        <div class="chat-msg">
+          I was skeptical about digital marketing for a clinic. But Grow Biz set up Google My Business, ran local ads, and now we get 40+ new patient inquiries every month. Truly remarkable! 🦷
+        </div>
+        <div class="chat-timestamp">10 days ago, 4:30 PM</div>
+        <span class="chat-stars">★★★★★</span>
+        <span class="chat-result-badge">✓ 40+ New Patients/Month</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===========================
+     SECTION 4: SOLUTION
+=========================== -->
+<section id="solution">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="centered">
+      <div class="section-tag">Our Solution</div>
+      <h2 class="section-title">A Complete Growth System —<br><span>Not Just Another Campaign</span></h2>
+      <p class="section-sub">We tackle every bottleneck in your marketing with a structured, proven process that delivers real, measurable outcomes for your business.</p>
+    </div>
+
+    <div class="solution-steps">
+      <div class="solution-step">
+        <div class="step-num">1</div>
+        <h3>Strategy Call</h3>
+        <p>We audit your current marketing, identify gaps, and map out a custom growth roadmap for your business.</p>
+      </div>
+      <div class="solution-step">
+        <div class="step-num">2</div>
+        <h3>Custom Plan</h3>
+        <p>We design a tailored strategy — the right channels, messaging, funnels, and budgets for your specific goals.</p>
+      </div>
+      <div class="solution-step">
+        <div class="step-num">3</div>
+        <h3>Execution</h3>
+        <p>Our expert team launches campaigns, builds assets, and sets up automation — fast, precise, and fully managed.</p>
+      </div>
+      <div class="solution-step">
+        <div class="step-num">4</div>
+        <h3>Optimization</h3>
+        <p>We track every metric, run A/B tests, and continuously refine to squeeze maximum ROI from every rupee spent.</p>
+      </div>
+      <div class="solution-step">
+        <div class="step-num">5</div>
+        <h3>Scale & Report</h3>
+        <p>Monthly transparent reporting shows you exactly what's working — then we double down and scale what wins.</p>
+      </div>
+    </div>
+
+    <div class="solution-cards">
+      <div class="sol-card">
+        <div class="sol-card-top">
+          <div class="sol-icon">🎯</div>
+          <h3>For Lead Generation Problems</h3>
+        </div>
+        <p>We build multi-step funnels with high-converting landing pages, targeted paid ads, and automated lead nurturing sequences that turn cold prospects into hot, ready-to-buy leads.</p>
+        <ul class="sol-features">
+          <li>Dedicated lead capture landing pages</li>
+          <li>Facebook & Google lead ad campaigns</li>
+          <li>Automated WhatsApp / email follow-up</li>
+          <li>CRM integration & lead scoring</li>
+        </ul>
+      </div>
+      <div class="sol-card">
+        <div class="sol-card-top">
+          <div class="sol-icon">📈</div>
+          <h3>For Low ROI & Wasted Ad Spend</h3>
+        </div>
+        <p>We audit your existing campaigns, restructure targeting, fix your ad creative, and implement proper conversion tracking so every rupee spent is accountable and optimized for return.</p>
+        <ul class="sol-features">
+          <li>Full Google & Meta ads audit</li>
+          <li>Campaign restructure & A/B testing</li>
+          <li>Conversion tracking setup</li>
+          <li>Weekly performance reporting</li>
+        </ul>
+      </div>
+      <div class="sol-card">
+        <div class="sol-card-top">
+          <div class="sol-icon">🌐</div>
+          <h3>For Weak Online Presence</h3>
+        </div>
+        <p>We redesign or build your website for conversion, optimize your Google My Business, create consistent social media content, and implement an SEO strategy that puts you on page one.</p>
+        <ul class="sol-features">
+          <li>High-converting website redesign</li>
+          <li>Google My Business optimization</li>
+          <li>Social media content calendar</li>
+          <li>On-page & local SEO</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="solution-cta">
+      <h3>Ready to See Real Results?</h3>
+      <p>Book a free 30-minute strategy call — no fluff, no sales pitch. Just a clear plan to grow your business.</p>
+      <a href="#contact" class="btn-white">Get Your Free Strategy Call →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===========================
+     SECTION 5: CONTACT FORM
+=========================== -->
+<section id="contact">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <div class="section-tag">Let's Talk</div>
+        <h2 class="section-title">Ready to <span>Grow Your Business</span> Faster?</h2>
+        <p>Fill out the form and our team will reach out within 24 hours to schedule your free 30-minute strategy session. No commitment, no pressure — just clarity.</p>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📧</div>
+          <div>
+            <h4>Email Us</h4>
+            <p>business@thegrowbiz.in</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📞</div>
+          <div>
+            <h4>Call Us</h4>
+            <p>+91 7003104443</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">🌐</div>
+          <div>
+            <h4>Visit Us Online</h4>
+            <p>www.thegrowbiz.in</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📍</div>
+          <div>
+            <h4>Location</h4>
+            <p>India (Serving clients worldwide)</p>
+          </div>
+        </div>
+
+        <div style="margin-top:32px; padding:24px; background:var(--purple-bg); border-radius:var(--radius); border-left:4px solid var(--purple);">
+          <p style="font-size:0.85rem; color:var(--text-mid); font-style:italic; margin:0; line-height:1.7;">"Professional, Reliable, and Result-Driven. Grow Biz helped us scale our leads and online presence faster than expected."</p>
+          <p style="font-size:0.78rem; color:var(--purple); font-weight:700; margin-top:10px; margin-bottom:0;">— Verified Client Review</p>
+        </div>
+      </div>
+
+      <div class="contact-form-box">
+        <h3>Book Your Free Strategy Call 🚀</h3>
+        <p class="form-sub">Fill in your details — we'll get back to you within 24 hours.</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name *</label>
+            <input type="text" placeholder="John">
+          </div>
+          <div class="form-group">
+            <label>Last Name *</label>
+            <input type="text" placeholder="Doe">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" placeholder="john@company.com">
+        </div>
+
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input type="tel" placeholder="+91 9876543210">
+        </div>
+
+        <div class="form-group">
+          <label>Business Type</label>
+          <select>
+            <option value="">Select your industry...</option>
+            <option>Real Estate</option>
+            <option>E-Commerce</option>
+            <option>Healthcare / Clinic</option>
+            <option>Education / Coaching</option>
+            <option>Restaurant / Food</option>
+            <option>SaaS / Technology</option>
+            <option>Retail / Local Business</option>
+            <option>Manufacturing</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Current Monthly Ad Budget</label>
+          <select>
+            <option value="">Select budget range...</option>
+            <option>₹0 – No current budget</option>
+            <option>₹5,000 – ₹15,000 / month</option>
+            <option>₹15,000 – ₹50,000 / month</option>
+            <option>₹50,000 – ₹1,50,000 / month</option>
+            <option>₹1,50,000+ / month</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>What's Your Biggest Marketing Challenge?</label>
+          <textarea placeholder="Tell us about your goals, current struggles, or what you've tried before..."></textarea>
+        </div>
+
+        <button class="form-submit" onclick="alert('Thank you! We will contact you within 24 hours. 🚀')">
+          Send My Free Strategy Call Request →
+        </button>
+
+        <div class="free-badge">
+          🔒 100% Free &amp; No Commitment &nbsp;|&nbsp; <span>Response within 24 hours</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-logo">🚀 Grow<span>Biz</span></div>
+  <p>© 2026 Grow Biz. All Rights Reserved | Serving Clients Since 2019</p>
+  <p style="margin-top:6px;">GST Number: 07BDRPA6888P1ZK | CIN Number: U72900DL2021PTC386217</p>
+</footer>
+
+</body>
+</html>
