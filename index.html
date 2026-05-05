@@ -159,28 +159,18 @@
   /* ========================
      SECTION 2 – PROBLEMS
   ======================== */
-  #problems { background: var(--gray-bg); padding: 60px 5%; }
-  .problems-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px; margin-top: 8px;
-  }
-  .prob-card {
-    background: #fff; border-radius: var(--radius);
-    border: 1px solid var(--border);
-    padding: 22px 20px;
-    display: flex; align-items: flex-start; gap: 14px;
-    transition: box-shadow 0.2s, border-color 0.2s;
-  }
-  .prob-card:hover { box-shadow: var(--shadow); border-color: #c4b5fd; }
-  .prob-num {
-    width: 32px; height: 32px; border-radius: 50%;
-    background: var(--purple-bg); color: var(--purple);
-    font-size: 0.85rem; font-weight: 800;
-    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-  }
-  .prob-card h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; color: var(--text-dark); }
-  .prob-card p { font-size: 0.78rem; color: var(--text-light); line-height: 1.5; margin: 0; }
-
+ #problems {
+  background: linear-gradient(135deg, #fff7e6 0%, #fdecc8 50%, #f8e1a1 100%);
+  padding: 72px 5%;
+  border-top: 1px solid #f3e5ab;
+  border-bottom: 1px solid #f3e5ab;
+}
+  .problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 8px; }
+  .prob-card { background: rgba(255,255,255,0.88); backdrop-filter: blur(6px); border-radius: var(--radius); border: 1px solid rgba(196,181,253,0.45); padding: 22px 20px; display: flex; align-items: flex-start; gap: 14px; transition: all 0.22s; }
+  .prob-card:hover { background: #fff; border-color: #a78bfa; box-shadow: 0 6px 24px rgba(124,58,237,0.12); transform: translateY(-2px); }
+  .prob-num { width: 34px; height: 34px; border-radius: 10px; background: var(--purple-grad); color: #fff; font-size: 0.85rem; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 12px rgba(124,58,237,0.25); }
+  .prob-card h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 5px; color: var(--text-dark); }
+  .prob-card p { font-size: 0.76rem; color: var(--text-light); line-height: 1.55; margin: 0; }
   /* ========================
      SECTION 3 – WHATSAPP REVIEWS
   ======================== */
@@ -427,12 +417,7 @@
         <p>Targeted funnels and campaigns that bring high-intent leads directly to your sales pipeline — not just traffic.</p>
         <a href="#contact" class="learn-more">Learn More →</a>
       </div>
-      <div class="service-card">
-        <div class="service-icon">📱</div>
-        <h3>Social Media Management</h3>
-        <p>Consistent content, engagement, and paid campaigns across Instagram, Facebook, LinkedIn — tailored to your brand voice.</p>
-        <a href="#contact" class="learn-more">Learn More →</a>
-      </div>
+      
       <div class="service-card">
         <div class="service-icon">🎯</div>
         <h3>Google Ads & PPC</h3>
@@ -445,30 +430,15 @@
         <p>High-converting, mobile-optimized websites and landing pages designed to turn visitors into customers.</p>
         <a href="#contact" class="learn-more">Learn More →</a>
       </div>
-      <div class="service-card">
-        <div class="service-icon">🤖</div>
-        <h3>AI & Marketing Automation</h3>
-        <p>CRM setup, automated follow-ups, and AI-powered workflows that nurture leads while you sleep.</p>
-        <a href="#contact" class="learn-more">Learn More →</a>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🔍</div>
-        <h3>SEO Services</h3>
-        <p>Long-term organic growth through technical SEO, content strategy, and link building that compounds over time.</p>
-        <a href="#contact" class="learn-more">Learn More →</a>
-      </div>
+      
+     
       <div class="service-card">
         <div class="service-icon">🎨</div>
         <h3>Branding & Creative</h3>
         <p>Logo, brand identity, ad creatives, and visual design that makes your business stand out and be remembered.</p>
         <a href="#contact" class="learn-more">Learn More →</a>
       </div>
-      <div class="service-card">
-        <div class="service-icon">🛒</div>
-        <h3>E-Commerce Solutions</h3>
-        <p>End-to-end e-commerce marketing — from product listing optimization to cart abandonment recovery campaigns.</p>
-        <a href="#contact" class="learn-more">Learn More →</a>
-      </div>
+      
     </div>
   </div>
 </section>
@@ -742,7 +712,7 @@
           <div class="contact-detail-icon">📧</div>
           <div>
             <h4>Email Us</h4>
-            <p>business@thegrowbiz.in</p>
+            <p>business@thegrowbiz.online</p>
           </div>
         </div>
         <div class="contact-detail">
@@ -756,7 +726,7 @@
           <div class="contact-detail-icon">🌐</div>
           <div>
             <h4>Visit Us Online</h4>
-            <p>www.thegrowbiz.in</p>
+            <p>www.thegrowbiz.online</p>
           </div>
         </div>
         <div class="contact-detail">
