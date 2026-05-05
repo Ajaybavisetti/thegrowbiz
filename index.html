@@ -159,44 +159,27 @@
   /* ========================
      SECTION 2 – PROBLEMS
   ======================== */
-  #problems { background: var(--gray-bg); }
-  .problems-wrapper {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 48px; align-items: center;
+  #problems { background: var(--gray-bg); padding: 60px 5%; }
+  .problems-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px; margin-top: 8px;
   }
-  .problems-visual {
-    background: var(--purple-grad);
-    border-radius: var(--radius-lg);
-    padding: 40px 36px;
-    color: #fff;
-  }
-  .problems-visual h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 24px; }
-  .problem-item {
-    display: flex; align-items: flex-start; gap: 16px;
-    background: rgba(255,255,255,0.12);
-    border-radius: 12px; padding: 18px 20px;
-    margin-bottom: 16px;
-  }
-  .problem-item:last-child { margin-bottom: 0; }
-  .problem-icon { font-size: 1.4rem; flex-shrink: 0; }
-  .problem-item h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
-  .problem-item p { font-size: 0.8rem; opacity: 0.85; line-height: 1.5; }
-  .problems-content h2 { margin-bottom: 20px; }
-  .problem-card {
-    background: #fff; border-radius: 12px;
+  .prob-card {
+    background: #fff; border-radius: var(--radius);
     border: 1px solid var(--border);
-    padding: 20px; margin-bottom: 14px;
-    display: flex; align-items: center; gap: 16px;
-    transition: box-shadow 0.2s;
+    padding: 22px 20px;
+    display: flex; align-items: flex-start; gap: 14px;
+    transition: box-shadow 0.2s, border-color 0.2s;
   }
-  .problem-card:hover { box-shadow: var(--shadow); }
-  .problem-badge {
-    background: #fee2e2; color: #dc2626;
-    font-size: 0.7rem; font-weight: 700;
-    padding: 3px 10px; border-radius: 50px;
-    flex-shrink: 0;
+  .prob-card:hover { box-shadow: var(--shadow); border-color: #c4b5fd; }
+  .prob-num {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--purple-bg); color: var(--purple);
+    font-size: 0.85rem; font-weight: 800;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
   }
-  .problem-card p { font-size: 0.875rem; color: var(--text-mid); line-height: 1.5; }
+  .prob-card h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; color: var(--text-dark); }
+  .prob-card p { font-size: 0.78rem; color: var(--text-light); line-height: 1.5; margin: 0; }
 
   /* ========================
      SECTION 3 – WHATSAPP REVIEWS
@@ -431,15 +414,7 @@
      SECTION 1: WHAT WE DO
 =========================== -->
 <section id="what-we-do">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div class="stats-row">
-      <div class="stat-item"><div class="stat-num">4,707+</div><div class="stat-label">Leads Generated</div></div>
-      <div class="stat-item"><div class="stat-num">2.3x</div><div class="stat-label">Avg. ROI for Clients</div></div>
-      <div class="stat-item"><div class="stat-num">46%</div><div class="stat-label">Avg. Conversion Lift</div></div>
-      <div class="stat-item"><div class="stat-num">23+</div><div class="stat-label">Industries Served</div></div>
-      <div class="stat-item"><div class="stat-num">47+</div><div class="stat-label">Expert Team Members</div></div>
-      <div class="stat-item"><div class="stat-num">7+</div><div class="stat-label">Years of Experience</div></div>
-    </div>
+  
 
     <div class="section-tag">What We Do</div>
     <h2 class="section-title">Performance-Driven Digital Marketing<br><span>Built to Scale Your Business</span></h2>
@@ -503,79 +478,40 @@
      SECTION 2: PROBLEMS
 =========================== -->
 <section id="problems">
-  <div style="max-width:1200px;margin:0 auto;">
+  <div style="max-width:1100px;margin:0 auto;">
     <div class="section-tag">Common Problems</div>
-    <h2 class="section-title" style="max-width:560px">Are These Challenges <span>Holding Your Business Back?</span></h2>
+    <h2 class="section-title" style="max-width:500px;margin-bottom:8px;">Are These <span>Holding Your Business Back?</span></h2>
+    <p class="section-sub" style="margin-bottom:32px;">Most businesses struggle with the same marketing problems. Do any of these sound familiar?</p>
 
-    <div class="problems-wrapper">
-      <div class="problems-content">
-        <div class="problem-card">
-          <div class="problem-badge">Pain Point</div>
-          <p>You're spending money on ads but getting zero qualified leads — just clicks that never convert into actual customers.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-badge">Pain Point</div>
-          <p>Your website gets traffic but visitors leave without taking any action. You don't know why or how to fix it.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-badge">Pain Point</div>
-          <p>Competitors are outranking you on Google and your social media posts are getting no engagement or reach.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-badge">Pain Point</div>
-          <p>You've tried multiple agencies before — they promised results but delivered generic reports and excuses instead.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-badge">Pain Point</div>
-          <p>You don't have a clear system for following up with leads. Potential clients fall through the cracks every week.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-badge">Pain Point</div>
-          <p>Your brand looks inconsistent across platforms — making it hard to build trust or stand out in a crowded market.</p>
-        </div>
-        <div style="margin-top:28px;">
-          <a href="#solution" class="btn-primary">See How We Solve This →</a>
-        </div>
+    <div class="problems-grid">
+      <div class="prob-card">
+        <div class="prob-num">1</div>
+        <div><h4>Zero Qualified Leads</h4><p>Spending on ads but getting clicks that never convert into real customers.</p></div>
       </div>
+      <div class="prob-card">
+        <div class="prob-num">2</div>
+        <div><h4>Wasted Ad Budget</h4><p>No clear ROI or attribution — money goes out but results don't come in.</p></div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-num">3</div>
+        <div><h4>Weak Online Presence</h4><p>Competitors outrank you and your social posts get no engagement or reach.</p></div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-num">4</div>
+        <div><h4>No Follow-up System</h4><p>Leads fall through the cracks — no automation, no CRM, no consistent follow-up.</p></div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-num">5</div>
+        <div><h4>Burned by Agencies</h4><p>Past agencies overpromised, underdelivered, and left you with empty reports.</p></div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-num">6</div>
+        <div><h4>Inconsistent Branding</h4><p>Your brand looks different everywhere — making it hard to build trust online.</p></div>
+      </div>
+    </div>
 
-      <div class="problems-visual">
-        <h3>😩 Does This Sound Familiar?</h3>
-        <div class="problem-item">
-          <div class="problem-icon">📉</div>
-          <div>
-            <h4>Wasted Ad Budget</h4>
-            <p>Thousands spent on Google/Meta ads with little to no trackable ROI or clear attribution.</p>
-          </div>
-        </div>
-        <div class="problem-item">
-          <div class="problem-icon">🤷</div>
-          <div>
-            <h4>No Marketing Strategy</h4>
-            <p>Running random campaigns without a documented funnel or data-driven growth plan in place.</p>
-          </div>
-        </div>
-        <div class="problem-item">
-          <div class="problem-icon">🕐</div>
-          <div>
-            <h4>No Time to Focus on Marketing</h4>
-            <p>You're too busy running the business to consistently execute on content, ads, and follow-ups.</p>
-          </div>
-        </div>
-        <div class="problem-item">
-          <div class="problem-icon">📵</div>
-          <div>
-            <h4>Weak Online Presence</h4>
-            <p>Outdated website, low social following, and poor search rankings mean customers can't find you.</p>
-          </div>
-        </div>
-        <div class="problem-item">
-          <div class="problem-icon">💔</div>
-          <div>
-            <h4>Burned by Past Agencies</h4>
-            <p>Previous marketing partners overpromised, underdelivered, and left you skeptical of getting real results.</p>
-          </div>
-        </div>
-      </div>
+    <div style="margin-top:32px;text-align:center;">
+      <a href="#solution" class="btn-primary">See How We Solve This →</a>
     </div>
   </div>
 </section>
