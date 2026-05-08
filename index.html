@@ -159,18 +159,18 @@
   /* ========================
      SECTION 2 – PROBLEMS
   ======================== */
- #problems {
-  background: linear-gradient(135deg, #fff7e6 0%, #fdecc8 50%, #f8e1a1 100%);
-  padding: 72px 5%;
+#problems {
+  background: linear-gradient(135deg, #fff7e6 0%, #fdecc8 55%, #f8e1a1 100%);
+  padding: 68px 5%;
   border-top: 1px solid #f3e5ab;
   border-bottom: 1px solid #f3e5ab;
 }
-  .problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 8px; }
-  .prob-card { background: rgba(255,255,255,0.88); backdrop-filter: blur(6px); border-radius: var(--radius); border: 1px solid rgba(196,181,253,0.45); padding: 22px 20px; display: flex; align-items: flex-start; gap: 14px; transition: all 0.22s; }
-  .prob-card:hover { background: #fff; border-color: #a78bfa; box-shadow: 0 6px 24px rgba(124,58,237,0.12); transform: translateY(-2px); }
-  .prob-num { width: 34px; height: 34px; border-radius: 10px; background: var(--purple-grad); color: #fff; font-size: 0.85rem; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 12px rgba(124,58,237,0.25); }
-  .prob-card h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 5px; color: var(--text-dark); }
-  .prob-card p { font-size: 0.76rem; color: var(--text-light); line-height: 1.55; margin: 0; }
+.problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 6px; }
+.prob-card { background: rgba(255,255,255,0.9); border-radius: var(--radius); border: 1px solid rgba(243,229,171,0.8); padding: 20px 18px; display: flex; align-items: flex-start; gap: 13px; transition: all 0.22s; }
+.prob-card:hover { background: #fff; border-color: #f0c040; box-shadow: 0 6px 20px rgba(240,192,64,0.15); transform: translateY(-2px); }
+.prob-num { width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%); color: #fff; font-size: 0.82rem; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 3px 10px rgba(245,158,11,0.28); }
+.prob-card h4 { font-size: 0.85rem; font-weight: 700; margin-bottom: 4px; color: var(--text-dark); }
+.prob-card p { font-size: 0.74rem; color: var(--text-light); line-height: 1.55; margin: 0; }
   /* ========================
      SECTION 3 – WHATSAPP REVIEWS
   ======================== */
@@ -364,6 +364,367 @@
   }
   .free-badge span { color: var(--purple); font-weight: 700; }
 
+  /* ========================
+     OTHER SECTIONS*/
+
+     /* =========================
+   CONTACT FORM UI
+========================= */
+
+.contact-form-box{
+  width: 100%;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 28px;
+  padding: 40px;
+  box-shadow:
+    0 15px 50px rgba(120, 70, 255, 0.12),
+    0 5px 20px rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft Glow */
+.contact-form-box::before{
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(132,94,247,0.18), transparent 70%);
+  top: -120px;
+  right: -100px;
+  z-index: 0;
+}
+
+.contact-form-box > *{
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   Heading
+========================= */
+
+.contact-form-box h3{
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.form-sub{
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
+
+/* =========================
+   Form Layout
+========================= */
+
+#leadForm{
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.form-group{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label{
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #1f2937;
+}
+
+/* =========================
+   Inputs
+========================= */
+
+.form-group input,
+.form-group textarea{
+  width: 100%;
+  border: 1.5px solid #e5e7eb;
+  background: rgba(255,255,255,0.9);
+  border-radius: 16px;
+  padding: 16px 18px;
+  font-size: 1rem;
+  color: #111827;
+  transition: all 0.3s ease;
+  outline: none;
+  font-family: inherit;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder{
+  color: #9ca3af;
+}
+
+.form-group textarea{
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Focus Effect */
+
+.form-group input:focus,
+.form-group textarea:focus{
+  border-color: #7c3aed;
+  background: #fff;
+  box-shadow:
+    0 0 0 5px rgba(124,58,237,0.12),
+    0 10px 30px rgba(124,58,237,0.10);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   Submit Button
+========================= */
+
+.form-submit{
+  position: relative;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 18px 24px;
+  border-radius: 18px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(
+    135deg,
+    #6d28d9,
+    #7c3aed,
+    #9333ea,
+    #a855f7
+  );
+  box-shadow:
+    0 12px 35px rgba(124,58,237,0.28);
+  transition: all 0.35s ease;
+}
+
+.form-submit:hover{
+  transform: translateY(-3px) scale(1.01);
+  box-shadow:
+    0 18px 45px rgba(124,58,237,0.35);
+}
+
+.form-submit:active{
+  transform: scale(0.98);
+}
+
+/* Shine Effect */
+
+.form-submit::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.25);
+  transform: skewX(-25deg);
+  transition: 0.7s;
+}
+
+.form-submit:hover::before{
+  left: 120%;
+}
+
+.btn-text{
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   Spinner
+========================= */
+
+.btn-spinner{
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  display: none;
+  animation: spin 0.8s linear infinite;
+  margin-right: 10px;
+}
+
+.loading .btn-spinner{
+  display: inline-block;
+}
+
+.loading .btn-text{
+  opacity: 0.8;
+}
+
+@keyframes spin{
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   Free Badge
+========================= */
+
+.free-badge{
+  margin-top: 8px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+.free-badge span{
+  color: #7c3aed;
+  font-weight: 700;
+}
+
+/* =========================
+   Error Toast
+========================= */
+
+.form-error-toast{
+  display: none;
+  background: rgba(255, 71, 87, 0.08);
+  border: 1px solid rgba(255, 71, 87, 0.25);
+  color: #dc2626;
+  padding: 14px 18px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* =========================
+   Success Box
+========================= */
+
+.form-success-box{
+  display: none;
+  text-align: center;
+  padding: 30px 10px;
+  animation: fadeIn 0.5s ease;
+}
+
+.success-icon{
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  background: linear-gradient(135deg,#7c3aed,#a855f7);
+  color: #fff;
+  box-shadow: 0 15px 40px rgba(124,58,237,0.25);
+}
+
+.form-success-box h4{
+  font-size: 2rem;
+  margin-bottom: 18px;
+  color: #111827;
+  font-weight: 800;
+}
+
+.form-success-box p{
+  color: #6b7280;
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 550px;
+  margin: auto;
+}
+
+.btn-submit-another{
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  padding: 14px 26px;
+  border-radius: 14px;
+  background: linear-gradient(135deg,#6d28d9,#9333ea);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(124,58,237,0.22);
+}
+
+.btn-submit-another:hover{
+  transform: translateY(-2px);
+}
+
+/* =========================
+   Animation
+========================= */
+
+@keyframes fadeIn{
+  from{
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 768px){
+
+  .contact-form-box{
+    padding: 25px;
+    border-radius: 22px;
+  }
+
+  .contact-form-box h3{
+    font-size: 1.6rem;
+  }
+
+  .form-submit{
+    padding: 16px;
+    font-size: 1rem;
+  }
+
+  .form-group input,
+  .form-group textarea{
+    padding: 14px 15px;
+  }
+
+}
+
+/* CENTER THE FORM */
+
+.contact-form-wrapper{
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+
+/* FORM BOX */
+
+.contact-form-box{
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+}
+
   /* FOOTER */
   footer {
     background: #0f0f1a; color: #ccc;
@@ -394,11 +755,20 @@
     <li><a href="#problems">Problems</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#solution">Solutions</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact-form">Contact</a></li>
   </ul>
-  <button class="btn-nav">Book a Call</button>
-</nav>
+  <button class="btn-nav" onclick="scrollToForm()">
+  Book a Call
+</button>
 
+</nav>
+<script>
+  function scrollToForm() {
+    document.getElementById("contact-form").scrollIntoView({
+      behavior: "smooth"
+    });
+  }
+</script>
 
 <!-- ===========================
      SECTION 1: WHAT WE DO
@@ -691,7 +1061,9 @@
     <div class="solution-cta">
       <h3>Ready to See Real Results?</h3>
       <p>Book a free 30-minute strategy call — no fluff, no sales pitch. Just a clear plan to grow your business.</p>
-      <a href="#contact" class="btn-white">Get Your Free Strategy Call →</a>
+      <button class="btn-white" onclick="scrollToForm()">
+  Get Your Free Strategy Call →
+</button>
     </div>
   </div>
 </section>
@@ -700,118 +1072,407 @@
 <!-- ===========================
      SECTION 5: CONTACT FORM
 =========================== -->
-<section id="contact">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div class="contact-wrapper">
-      <div class="contact-info">
-        <div class="section-tag">Let's Talk</div>
-        <h2 class="section-title">Ready to <span>Grow Your Business</span> Faster?</h2>
-        <p>Fill out the form and our team will reach out within 24 hours to schedule your free 30-minute strategy session. No commitment, no pressure — just clarity.</p>
+<!-- ============================================================
+     REPLACE ONLY the <div class="contact-form-box">...</div>
+     with this code. Keep your left side panel unchanged.
+     
+     STEP 1: Deploy Google Apps Script (see bottom of file)
+     STEP 2: Replace YOUR_WEB_APP_URL with your deployed URL
+============================================================ -->
 
-        <div class="contact-detail">
-          <div class="contact-detail-icon">📧</div>
-          <div>
-            <h4>Email Us</h4>
-            <p>business@thegrowbiz.online</p>
-          </div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-detail-icon">📞</div>
-          <div>
-            <h4>Call Us</h4>
-            <p>+91 7003104443</p>
-          </div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-detail-icon">🌐</div>
-          <div>
-            <h4>Visit Us Online</h4>
-            <p>www.thegrowbiz.online</p>
-          </div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-detail-icon">📍</div>
-          <div>
-            <h4>Location</h4>
-            <p>India (Serving clients worldwide)</p>
-          </div>
-        </div>
+<!-- CSS: Add inside your existing <style> tag -->
+<style>
+.contact-form-box {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow);
+}
+.contact-form-box h3 {
+  font-size: 1.3rem; font-weight: 800; margin-bottom: 6px; color: var(--text-dark);
+}
+.contact-form-box .form-sub {
+  font-size: 0.85rem; color: var(--text-light); margin-bottom: 28px;
+}
 
-        <div style="margin-top:32px; padding:24px; background:var(--purple-bg); border-radius:var(--radius); border-left:4px solid var(--purple);">
-          <p style="font-size:0.85rem; color:var(--text-mid); font-style:italic; margin:0; line-height:1.7;">"Professional, Reliable, and Result-Driven. Grow Biz helped us scale our leads and online presence faster than expected."</p>
-          <p style="font-size:0.78rem; color:var(--purple); font-weight:700; margin-top:10px; margin-bottom:0;">— Verified Client Review</p>
-        </div>
+/* Input fields */
+.form-group { margin-bottom: 18px; }
+.form-group label {
+  display: block; font-size: 0.8rem; font-weight: 600;
+  color: var(--text-mid); margin-bottom: 7px;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 13px 15px;
+  font-size: 0.875rem;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-dark);
+  background: #f9fafb;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  outline: none;
+  -webkit-appearance: none;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--purple);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(124,58,237,0.1);
+}
+.form-group textarea {
+  resize: vertical;
+  min-height: 115px;
+  line-height: 1.6;
+}
+
+/* Submit button */
+.form-submit {
+  width: 100%;
+  background: var(--purple-grad);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: opacity 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  letter-spacing: 0.01em;
+}
+.form-submit:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+.form-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Badge under button */
+.free-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: var(--text-light);
+  margin-top: 13px;
+}
+.free-badge span { color: var(--purple); font-weight: 700; }
+
+/* Loading spinner */
+.btn-spinner {
+  width: 18px; height: 18px;
+  border: 2.5px solid rgba(255,255,255,0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin360 0.65s linear infinite;
+  display: none;
+  flex-shrink: 0;
+}
+.form-submit.is-loading .btn-spinner { display: block; }
+.form-submit.is-loading .btn-text   { display: none; }
+@keyframes spin360 { to { transform: rotate(360deg); } }
+
+/* Success message */
+.form-success-box {
+  display: none;
+  text-align: center;
+  padding: 40px 24px;
+  animation: fadeUp 0.4s ease;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.success-icon {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: #dcfce7;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 20px;
+}
+.form-success-box h4 {
+  font-size: 1.2rem; font-weight: 800; color: var(--text-dark); margin-bottom: 10px;
+}
+.form-success-box p {
+  font-size: 0.88rem; color: var(--text-light); line-height: 1.7; margin-bottom: 24px;
+}
+.btn-submit-another {
+  background: var(--purple-bg);
+  color: var(--purple);
+  border: none;
+  border-radius: 8px;
+  padding: 11px 24px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.2s;
+}
+.btn-submit-another:hover { background: #ede9fe; }
+
+/* Error toast */
+.form-error-toast {
+  display: none;
+  background: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+  text-align: center;
+}
+.form-error-toast.show { display: block; }
+</style>
+
+<!-- CENTER WRAPPER -->
+<div class="contact-form-wrapper" id="contact-form" >
+
+  <!-- CONTACT FORM -->
+  <div class="contact-form-box" id="contactBox">
+
+    <!-- FORM VIEW -->
+    <div id="formView">
+
+      <h3>Book Your Free Strategy Call 🚀</h3>
+
+      <p class="form-sub">
+        Fill in your details — we'll get back to you within 24 hours.
+      </p>
+
+      <div class="form-error-toast" id="errorToast">
+        ❌ Something went wrong. Please try again or call +91 7003104443.
       </div>
 
-      <div class="contact-form-box">
-        <h3>Book Your Free Strategy Call 🚀</h3>
-        <p class="form-sub">Fill in your details — we'll get back to you within 24 hours.</p>
+      <form id="leadForm" onsubmit="handleSubmit(event)" novalidate>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label>First Name *</label>
-            <input type="text" placeholder="John">
-          </div>
-          <div class="form-group">
-            <label>Last Name *</label>
-            <input type="text" placeholder="Doe">
-          </div>
+        <div class="form-group">
+          <label for="f-name">Full Name *</label>
+          <input
+            type="text"
+            id="f-name"
+            name="name"
+            placeholder="Enter your full name"
+            required
+            autocomplete="name"
+          >
         </div>
 
         <div class="form-group">
-          <label>Email Address *</label>
-          <input type="email" placeholder="john@company.com">
+          <label for="f-email">Email Address *</label>
+          <input
+            type="email"
+            id="f-email"
+            name="email"
+            placeholder="john@company.com"
+            required
+            autocomplete="email"
+          >
         </div>
 
         <div class="form-group">
-          <label>Phone Number *</label>
-          <input type="tel" placeholder="+91 9876543210">
+          <label for="f-phone">Phone Number *</label>
+          <input
+            type="tel"
+            id="f-phone"
+            name="phone"
+            placeholder="+91 9876543210"
+            required
+            autocomplete="tel"
+          >
         </div>
 
         <div class="form-group">
-          <label>Business Type</label>
-          <select>
-            <option value="">Select your industry...</option>
-            <option>Real Estate</option>
-            <option>E-Commerce</option>
-            <option>Healthcare / Clinic</option>
-            <option>Education / Coaching</option>
-            <option>Restaurant / Food</option>
-            <option>SaaS / Technology</option>
-            <option>Retail / Local Business</option>
-            <option>Manufacturing</option>
-            <option>Other</option>
-          </select>
+          <label for="f-message">Message</label>
+          <textarea
+            id="f-message"
+            name="message"
+            placeholder="Tell us about your business goals or marketing challenges..."
+          ></textarea>
         </div>
 
-        <div class="form-group">
-          <label>Current Monthly Ad Budget</label>
-          <select>
-            <option value="">Select budget range...</option>
-            <option>₹0 – No current budget</option>
-            <option>₹5,000 – ₹15,000 / month</option>
-            <option>₹15,000 – ₹50,000 / month</option>
-            <option>₹50,000 – ₹1,50,000 / month</option>
-            <option>₹1,50,000+ / month</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label>What's Your Biggest Marketing Challenge?</label>
-          <textarea placeholder="Tell us about your goals, current struggles, or what you've tried before..."></textarea>
-        </div>
-
-        <button class="form-submit" onclick="alert('Thank you! We will contact you within 24 hours. 🚀')">
-          Send My Free Strategy Call Request →
+        <button type="submit" class="form-submit" id="submitBtn">
+          <span class="btn-spinner"></span>
+          <span class="btn-text">
+            Send My Free Strategy Call Request →
+          </span>
         </button>
 
         <div class="free-badge">
-          🔒 100% Free &amp; No Commitment &nbsp;|&nbsp; <span>Response within 24 hours</span>
+          🔒 100% Free &amp; No Commitment |
+          <span>Response within 24 hours</span>
         </div>
-      </div>
+
+      </form>
+
     </div>
+
+    <!-- SUCCESS VIEW -->
+    <div class="form-success-box" id="successView">
+
+      <div class="success-icon">✅</div>
+
+      <h4>Request Submitted Successfully!</h4>
+
+      <p>
+        Thank you! Our team will reach out to you within
+        <strong>24 hours</strong>
+        to schedule your free 30-minute strategy call.
+        <br><br>
+
+        In the meantime, feel free to WhatsApp us at
+        <strong>+91 7003104443</strong>.
+      </p>
+
+      <button
+        class="btn-submit-another"
+        onclick="resetForm()"
+      >
+        Submit Another Request
+      </button>
+
+    </div>
+
   </div>
-</section>
+
+</div>
+
+
+<!-- ── JAVASCRIPT ── -->
+<script>
+  // ⚠️ Replace with your Google Apps Script Web App URL
+  const SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzRLyUDtA5Emki1TRWSJAe_5MCWsVKjh4YTgdBTfgHDhgKNeVYUKSvTCgFwYn4QJWCE/exec';
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    const form      = document.getElementById("leadForm");
+    const btn       = document.getElementById("submitBtn");
+    const errorBox  = document.getElementById("errorToast");
+    const formView  = document.getElementById("formView");
+    const successView = document.getElementById("successView");
+
+    // Basic validation
+    const name  = document.getElementById("f-name").value.trim();
+    const email = document.getElementById("f-email").value.trim();
+    const phone = document.getElementById("f-phone").value.trim();
+
+    if (!name || !email || !phone) {
+      errorBox.textContent = "⚠️ Please fill in Name, Email and Phone Number.";
+      errorBox.classList.add("show");
+      setTimeout(() => errorBox.classList.remove("show"), 4000);
+      return;
+    }
+
+    // Email format check
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      errorBox.textContent = "⚠️ Please enter a valid email address.";
+      errorBox.classList.add("show");
+      setTimeout(() => errorBox.classList.remove("show"), 4000);
+      return;
+    }
+
+    // Loading state
+    errorBox.classList.remove("show");
+    btn.disabled = true;
+    btn.classList.add("is-loading");
+
+    // Build form data
+    const payload = new URLSearchParams({
+      name:    name,
+      email:   email,
+      phone:   phone,
+      message: document.getElementById("f-message").value.trim()
+    });
+
+    try {
+      await fetch(SHEET_ENDPOINT, {
+        method: "POST",
+        mode:   "no-cors",   // required for Apps Script
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body:    payload.toString()
+      });
+
+      // Show success view
+      formView.style.display    = "none";
+      successView.style.display = "block";
+
+    } catch (err) {
+      console.error(err);
+      errorBox.textContent = "❌ Something went wrong. Please try again.";
+      errorBox.classList.add("show");
+    } finally {
+      btn.disabled = false;
+      btn.classList.remove("is-loading");
+    }
+  }
+
+  function resetForm() {
+    document.getElementById("leadForm").reset();
+    document.getElementById("formView").style.display    = "block";
+    document.getElementById("successView").style.display = "none";
+  }
+</script>
+
+
+<!-- ============================================================
+  GOOGLE APPS SCRIPT — Deploy this as a Web App
+  Go to: sheet → Extensions → Apps Script → paste below
+  Deploy → New Deployment → Web App
+  Execute as: Me | Who has access: Anyone
+  Copy the URL and paste above as SHEET_ENDPOINT
+============================================================
+
+function doPost(e) {
+  try {
+    const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+
+    // Auto-create headers on first row
+    if (sheet.getLastRow() === 0) {
+      const headers = sheet.getRange(1, 1, 1, 5);
+      headers.setValues([["Timestamp", "Full Name", "Email", "Phone", "Message"]]);
+      headers.setBackground("#7c3aed");
+      headers.setFontColor("#ffffff");
+      headers.setFontWeight("bold");
+      headers.setFontSize(11);
+      sheet.setFrozenRows(1);
+      sheet.setColumnWidths(1, 5, 200);
+    }
+
+    const d = e.parameter;
+    sheet.appendRow([
+      new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+      d.name    || "",
+      d.email   || "",
+      d.phone   || "",
+      d.message || ""
+    ]);
+
+    return ContentService
+      .createTextOutput(JSON.stringify({ result: "success" }))
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } catch(err) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ result: "error", error: err.toString() }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+============================================================ -->
 
 
 <!-- FOOTER -->
